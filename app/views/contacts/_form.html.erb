@@ -1,0 +1,62 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div class="row">
+  <div class="col-sm-9">
+     <h2>Basic Information</h2>
+     <div class="field">
+     <%= f.label :Firstname %><br>
+     <%= f.text_field :Firstname %>
+     </div>
+    <div class="field">
+     <%= f.label :Lastname %><br>
+     <%= f.text_field :lastname %>
+     </div>
+ <div class="row">
+    <div class="col-xs-12 col-sm-6">
+    <h2>Communication details</h2>
+    <div class="field">
+    <%= f.label :Emailid %><br>
+    <%= f.text_field :Emailid, placeholder: 'user@domain.com' %>
+    </div>
+    <div class="field">
+    <%= f.label :Phone %><br>
+    <%= f.text_field :Phone %>
+    </div>
+     </div>
+ <div class="col-xs-12 col-sm-6">
+    <h2>Addresse(s)</h2>
+    <div class="field">
+    <%= f.label :Addr %><br>
+    <%= f.text_field :Addr %>
+    </div>
+    <div class="field">
+    <%= f.label :Country %><br>
+    <%= f.text_field :Country%>
+    </div>
+ </div>
+       
+     </div>
+   </div>
+    <div class="actions">
+  <%=  f.submit %>
+ 
+  </div>
+  <%= link_to '<button type="button" class="btn btn-primary >New Contact</button>'.html_safe,contacts_path  %>
+<button type="button" class="btn btn-primary">AllContacts</button>
+<%= link_to '<button type="button" class="btn btn-primary >New Contact</button>'.html_safe, new_contact_path  %>
+<button type="button" class="btn btn-primary">New Contact</button>
+
+
+  </div>
+ <% end %>

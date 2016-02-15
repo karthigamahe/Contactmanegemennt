@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%=  @contact.Fullname %>
+  <%=  @contact.Firstname %>
+  <%=  @contact.lastname %>
+        
+
+  
+  
+</p>
+
+<p>
+  <strong>Emailid:</strong>
+  <%= @contact.Emailid %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @contact.Phone %>
+</p>
+
+<p>
+  <strong>PrimaryAddress:</strong>
+  <%= @contact.PrimaryAddress %>
+  <%= @contact.Addr %>
+  <%= @contact.Country %>
+  </p>
+
+
+<%= link_to '<button type="button" class="btn btn-primary >New Contact</button>'.html_safe, new_contact_path  %>
+<button type="button" class="btn btn-primary">New Contact</button>
+<%= link_to '<button type="button" class="btn btn-primary >New Contact</button>'.html_safe,contacts_path  %>
+<button type="button" class="btn btn-primary">AllContacts</button>
+
+
